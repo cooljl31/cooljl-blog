@@ -7,3 +7,6 @@ gem 'pg'
 gem 'rack-cache'
 gem 'rdiscount'
 gem 'rack-mount'
+group :development, :test do
+  gem 'rerun'
+end

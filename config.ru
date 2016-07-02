@@ -1,12 +1,8 @@
 $LOAD_PATH.unshift 'lib'
+
+# this is optional
+require 'rack/cache'
+use Rack::Cache
+
 require 'blog'
-
-if ENV['URL'] and ENV['DATABASE_URL']
-  # we're on Heoku no cache needed also it is a read-only file system
-  GithubHook.disable :autopull
-elsif Blog.production?
-  require 'rack/cache'
-  use Rack::Cache
-end
-
 run Blog
