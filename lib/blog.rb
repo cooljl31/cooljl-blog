@@ -11,7 +11,7 @@ class Blog < Sinatra::Base
   set :app_file, __FILE__
 
   # loop trhough all the article file
-  Dir.glob "#{root}/articlea/*.md" do |file|
+  Dir.glob "#{root}/articles/*.md" do |file|
     # parse meta date and content from file
     meta, content = File.read(file).split("\n\n", 2)
 
@@ -19,7 +19,7 @@ class Blog < Sinatra::Base
     article = OpenStruct.new YAML.load(meta)
 
     # convert the data to a time Object
-    article.date = TIme.parse article.date.to_s
+    article.date = Time.parse article.date.to_s
 
     # add the content
     article.content = content
@@ -29,15 +29,15 @@ class Blog < Sinatra::Base
 
     # set up the root
     get "/#{article.slug}" do
-      erb :post, :local => { :article => article }
+      erb :post, :locals => { :article => article }
     end
     # Add article to the list of articles
     articles << article
   end
 
   # sot article by date display new article first
-  article.sort_by! { |article| article.date }
-  article.reverse!
+  articles.sort_by! { |article| article.date }
+  articles.reverse!
 
   get '/' do
     erb :index
