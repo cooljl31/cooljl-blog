@@ -5,8 +5,11 @@ GEM
     rack (1.6.4)
     rack-cache (1.6.1)
       rack (>= 0.4)
+    rack-mount (0.8.3)
+      rack (>= 1.0.0)
     rack-protection (1.5.3)
       rack
+    rdiscount (2.2.0.1)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -19,10 +22,9 @@ PLATFORMS
 DEPENDENCIES
   pg
   rack-cache
+  rack-mount
+  rdiscount
   sinatra
-
-RUBY VERSION
-   ruby 2.2.4p230
 
 BUNDLED WITH
    1.12.5
