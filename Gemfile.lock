@@ -3,6 +3,8 @@ GEM
   specs:
     pg (0.18.4)
     rack (1.6.4)
+    rack-cache (1.6.1)
+      rack (>= 0.4)
     rack-protection (1.5.3)
       rack
     sinatra (1.4.7)
@@ -16,6 +18,7 @@ PLATFORMS
 
 DEPENDENCIES
   pg
+  rack-cache
   sinatra
 
 RUBY VERSION
