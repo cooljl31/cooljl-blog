@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 ruby '2.2.4'
 
-gem 'sinatra'
+gem 'sinatra', '>= 2.0.0'
 gem 'pg'
-gem 'rack-cache'
+gem 'rack-cache', '>= 1.7.0'
 gem 'rdiscount'
 gem 'rack-mount'
 group :development, :test do
-  gem 'rerun'
+  gem 'rerun', '>= 0.12.0'
 end
